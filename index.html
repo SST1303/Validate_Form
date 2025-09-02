@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-toggle">
+            <!-- Form Toggle Buttons -->
+            <button id="signUpToggle" class="toggle-btn active">Sign Up</button>
+            <button id="signInToggle" class="toggle-btn">Sign In</button>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div id="signUpForm" class="form-container active">
+            <h1>Create Account</h1>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="signUpEmail">Email Address:</label>
+                    <input type="email" id="signUpEmail" name="email" required>
+                    <span class="error-message" id="signUpEmailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="signUpPassword">Password:</label>
+                    <input type="password" id="signUpPassword" name="password" required>
+                    <span class="error-message" id="signUpPasswordError"></span>
+                    <div class="password-requirements">
+                        <p>Password must contain:</p>
+                        <ul>
+                            <li id="length">At least 8 characters</li>
+                            <li id="uppercase">One uppercase letter</li>
+                            <li id="lowercase">One lowercase letter</li>
+                            <li id="number">One number</li>
+                            <li id="special">One special character (!@#$%^&*)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+
+        <!-- Sign In Form -->
+         <div id="signInForm" class="form-container">
+            <h1>Welcome Back</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="signInEmail">Email Address:</label>
+                    <input type="email" id="signInEmail" name="email" required>
+                    <span class="error-message" id="signInEmailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="signInPassword">Password:</label>
+                    <input type="password" id="signInPassword" name="password" required>
+                    <span class="error-message" id="signInPasswordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                </div>
+
+                <button type="submit">Sign In</button>
+
+                <div class="forgot-password">
+                    <a href="#" id="forgotPasswordLink">Forgot your password?</a>
+                </div>
+            </form>
+         </div>
+
+         <!--Success Messages-->
+        <div id="signUpSuccessMessage" class="success-message" style="display: none;">
+            <h2>Account Created!</h2>
+            <p>Your account has been created successfully. You can now sign in.</p>
+        </div>
+
+        <div id="signInSuccessMessage" class="success-message" style="display: none;">
+            <h2>Welcome Back!</h2>
+            <p>You have successfully signed in to your account.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
